@@ -1,0 +1,458 @@
+<!DOCTYPE HTML>
+<!--
+	Verti by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>S.W.E.A.T</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="shortcut icon" href="images/Logosingle2 (1).png" type="image/x-icon"/>
+		<script data-ad-client="ca-pub-5161707536268979" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	</head>
+	<body class="is-preload homepage">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header-wrapper">
+					<header id="header" class="container">
+
+						<!-- Logo -->
+							<div id="logo">
+								<a href="index.html">
+									<img src="images/longlogo2.png" width="200" height="121" alt="logo"></a>
+							</div>
+
+						<!-- Nav -->
+							<nav id="nav">
+								<ul>
+									<li><a href="index.html">Welcome</a></li>
+									<li><a href="About-Us.html">About Us</a></li>
+									<li><a href="CLOTHING.html">Clothing</a></li>
+									<li class="current"><a href="Nutrition.html">Nutrition</a></li>
+									<li><a href="Workout.html">Workouts</a></li>
+								</ul>
+							</nav>
+
+					</header>
+				</div>
+
+			<!-- Main -->
+				<div id="main-wrapper">
+					<div class="container">
+						<div class="row gtr-200">
+							<div class="col-8 col-12-medium">
+								<div id="content">
+
+									<!-- Content -->
+										<article>
+
+											<h2>Nutrition</h2>
+
+											<p>When it comes to body goals and fitness, 80% of your results will be achieved in the kitchen. People seem to downplay it but here at SWEAT we aim to focus on the importance of nutrition to give you the most attainable way to achieve your goals AND sustain them.</p>
+
+											<h3>Macro Counting</h3>
+											<p>We think counting your calories and macros is the best way to achieve your body goals as this mathematically calculates your body maintenance calories(how much your body needs to stay the same weight/size) then by simply adding or subtracting 500 calories you can see yourself either gain weight or lose weight(bulking/cutting) to achieve your desired look. It then goes further as we then split those calories into carbs, proteins and fats, for example if your were trying to bulk muscle, you'd add 500 calories toward your maintenance caloric intake and have a higher protein split. While on the other end of the spectrum if you were trying to lose wight(cut) you would subtract 500 calories from your maintenance calories and have a lower carb split. We have a calculator tool below to help you find out your caloric needs and the split you may prefer with a cook book on the side which will give you ideas on what foods to make to help your journey.</p>
+											 
+												
+												<p>      </p>
+												<p>      </p>
+												<div class = "widget name">
+													<h2>TDEE CALCULATOR</h2>
+												</div>
+												
+												<p>      </p>
+
+
+										</article>
+
+								</div>
+								<div class="widget">
+
+
+									<style>
+										.switch {
+										position: relative;
+										display: inline-block;
+										width: 60px;
+										height: 34px;
+										}
+							
+										.switch input {
+										opacity: 0;
+										width: 0;
+										height: 0;
+										}
+							
+										.slider {
+										position: absolute;
+										cursor: pointer;
+										top: 0;
+										left: 0;
+										right: 0;
+										bottom: 0;
+										background-color: #ccc;
+										-webkit-transition: .4s;
+										transition: .4s;
+										}
+							
+										.slider:before {
+										position: absolute;
+										content: "";
+										height: 26px;
+										width: 26px;
+										left: 4px;
+										bottom: 4px;
+										background-color: white;
+										-webkit-transition: .4s;
+										transition: .4s;
+										}
+							
+										input:checked + .slider {
+										background-color: #2196F3;
+										}
+							
+										input:focus + .slider {
+										box-shadow: 0 0 1px #2196F3;
+										}
+							
+										input:checked + .slider:before {
+										-webkit-transform: translateX(26px);
+										-ms-transform: translateX(26px);
+										transform: translateX(26px);
+										}
+							
+										.slider.round {
+										border-radius: 34px;
+										}
+							
+										.slider.round:before {
+										border-radius: 50%;
+										}
+							
+									</style>
+								</head>
+								<body style="font-family: 'Roboto', sans-serif;">
+									<div class="container" id="calc_app">
+										<div class="row" v-cloak>
+											<div class="col-sm" id='myContainer' style="padding: 1em;">
+												<form id="calcform" v-on:submit="onSubmitForm">
+													<div class="form-group" style="display: flex; align-items: center; justify-content:left;">
+														<span style="padding: 0 1rem 0 0;">Metric</span>
+														<label class="switch">
+															<input type="checkbox" v-model="useLbs">
+															<span class="slider round"></span>
+														</label>
+														<span style="padding: 0 0 0 1rem;">Imperial</span>
+							
+													</div>
+													<div class="form-group">
+														<label for="gender">{{texts.gender_label}}:</label>
+														<select class="form-control" id="gender" v-model="gender">
+															<option value="m">{{texts.gender_male}}</option>
+															<option value="f">{{texts.gender_female}}</option>
+														</select>
+													</div>
+													<div class="row">
+														<div class="col">
+															<div class="form-group">
+																<label for="age">{{texts.age_label}}:</label>
+																<input type="number" class="form-control" min="1" max="99" id="age" :placeholder="texts.age_placeholder" required v-model="age">
+																<!-- <small id="ageHelp" class="form-text text-muted">Tu edad nos ayuda a determinar tu consumo calórico</small> -->
+															</div>
+														</div>
+														<div class="col">
+															<div class="form-group">
+																<label for="weight">{{texts.weight_label}}({{ useLbs? "lbs." : "kg"}}):</label>
+																<input type="number" class="form-control" min="1" id="weight" :placeholder="useLbs? 'lbs.' : 'kg'" required v-model="weight">
+																<!-- <small id="ageHelp" class="form-text text-muted">Tu edad nos ayuda a determinar tu consumo calórico</small> -->
+															</div>
+														</div>
+														<div class="col" v-if="!useLbs"> 
+															<div class="form-group">
+																<label for="height">{{texts.height_label}}:</label>
+																<input type="number" class="form-control" min="1" id="height" placeholder="cm." required v-model="height_cm">
+																<!-- <small id="ageHelp" class="form-text text-muted">Tu edad nos ayuda a determinar tu consumo calórico</small> -->
+															</div>
+														</div>
+														<div class="col" v-if="useLbs"> 
+															<div class="form-group">
+																<label for="height_ft">{{texts.height_label}}</label>
+																<input type="number" class="form-control" min="1" id="height_ft" placeholder="ft." required v-model="height_ft">
+															</div>
+														</div>
+														<div class="col" v-if="useLbs"> 
+															<div class="form-group">
+																<label for="height_in" style="color: transparent;">.</label>
+																<input type="number" class="form-control" min="1" id="height_in" placeholder="in." required v-model="height_in">
+															</div>
+														</div>
+													</div>
+													<div class="form-group">
+														<label for="activitySelect">{{texts.activity_label}}:</label>
+														<select class="form-control" id="activitySelect" v-model="activity">
+															<option value="1.2">{{texts.activity_sedentary}}</option> 
+															<option value="1.375">{{texts.activity_low_active}}</option>
+															<option value="1.55">{{texts.activity_mild_active}}</option>
+															<option value="1.725">{{texts.activity_very_active}}</option>
+															<option value="1.9">{{texts.activity_extreme_active}}</option>
+														</select>
+													</div>
+													<div class="form-group">
+														<label for="objective">{{texts.objective_label}}:</label>
+														<select class="form-control" id="objective" v-model="objective">
+															<option value="lose">{{texts.objective_lose}}</option>
+															<option value="keep">{{texts.objective_maintain}}</option>
+															<option value="gain">{{texts.objective_gain}}</option>
+														</select>
+													</div>
+													<button type="submit" class="btn btn-primary btn-block">{{texts.result_button_label}}</button>
+												</form>
+												<div id="results"></div>
+											</div>
+										</div>
+										<div v-if="hasSubmitted">
+											<hr />
+											<h5>{{texts.total_calories}}: <b>{{intake}}</b></h5>
+											<br>
+											<h5>{{texts.macronutrients}}:</h5>
+											<ul style="list-style: none;">
+												<li>🥩 <b>{{texts.protein}}: </b> {{protein}} {{texts.grams}} </li>
+												<li>🍚 <b>{{texts.carbs}}:</b> {{carbs}} {{texts.grams}}</li>
+												<li>🥑 <b>{{texts.fats}}:</b> {{fats}} {{texts.grams}}</li>
+											</ul>
+										</div>
+									</div>
+									<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+									<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+									<script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
+									<script>
+										// texts
+										const translations = {
+											en: {
+												gender_label: "Gender",
+												gender_male: "Male",
+												gender_female: "Female",
+												age_label: "Age",
+												age_placeholder: "Age",
+												weight_label: "Weight",
+												weight_placeholder: "Weight",
+												height_label: "Height",
+												height_placeholder: "Height",
+												activity_label: "Activity level",
+												activity_sedentary: "Sedentary (little to no activity)",
+												activity_low_active: "Lightly active (light exercise 1-3 times a week)",
+												activity_mild_active: "Mildly active (moderate exercise, 3-5 times a week)",
+												activity_very_active: "Very Active (heavy exercise, 6-7 times a week)",
+												activity_extreme_active: "Extremely active (very heavy exercise + dairy physical labour)",
+												objective_label: "Objective",
+												objective_lose: "Lose fat",
+												objective_maintain: "Maintain weight",
+												objective_gain: "Gain muscle",
+												result_button_label: "See results",
+												total_calories: "Total Calories",
+												macronutrients: "Macronutrients",
+												protein: "Protein",
+												carbs: "Carbohydrates",
+												fats: "Fats",
+												grams: "grams"
+											},
+											es:{
+												gender_label: "Sexo",
+												gender_male: "Masculino",
+												gender_female: "Femenino",
+												age_label: "Edad",
+												age_placeholder: "Edad",
+												weight_label: "Peso",
+												weight_placeholder: "Peso",
+												height_label: "Altura",
+												height_placeholder: "Altura",
+												activity_label: "Nivel de actividad",
+												activity_sedentary: "Sedentario (Poco o nada de ejercicio)",
+												activity_low_active: "Ligeramente Activo (Ejercicio ligero. 1-3 veces a la semana)",
+												activity_mild_active: "Moderadamente Activo (Ejercicio moderado. 3-5 veces a la semana)",
+												activity_very_active: "Muy Activo (Ejercicio fuerte. 6-7 veces a la semana)",
+												activity_extreme_active: "Extra Activo (Ejercicio muy fuerte + Trabajo fisico diario)",
+												objective_label: "Objetivo",
+												objective_lose: "Quemar grasa",
+												objective_maintain: "Mantener resultados",
+												objective_gain: "Ganar musculo",
+												result_button_label: "Ver resultados",
+												total_calories: "Total de calorias",
+												macronutrients: "Macronutrientes",
+												protein: "Proteina",
+												carbs: "Carbohidratos",
+												fats: "Grasas",
+												grams: "gramos"
+											}
+										}
+										// constants
+										var men = {
+											lose: -800,
+											keep: -400,
+											gain: 150,
+										}
+										var women = {
+											lose: -550,
+											keep: -300,
+											gain: 200,
+										}
+										var fat_ratios = {
+											lose: 0.3,
+											keep: 0.3,
+											gain: 0.2
+										}
+										var carb_ratios = {
+											lose: 0.3,
+											keep: 0.35,
+											gain: 0.4
+										}
+										var protein_ratios = {
+											lose: 0.4,
+											keep: 0.35,
+											gain: 0.4
+										}
+										const getLang = () => {
+											if(navigator.languages){
+												for (let idx = 0; idx < navigator.languages.length; idx++) {
+													const lang = navigator.languages[idx];
+													if(lang.indexOf("en") >= 0){
+														return "en"
+													}
+													if(lang.indexOf("es") >= 0){
+														return "es"
+													}
+												}
+												
+											}
+											else if (navigator.language){
+												if(navigator.language.indexOf("en") >= 0){
+													return "en"
+												}
+												if(navigator.language.indexOf("es") >= 0){
+													return "es"
+												}
+											}
+											return "en"
+										}
+										// Vue app
+										var app = new Vue({ 
+											el: '#calc_app',
+											data: {
+												useLbs: false,
+												age: null,
+												height_cm: null,
+												height_ft: null,
+												height_in: null,
+												weight: null,
+												activity: "1.2",
+												objective: "lose",
+												gender: 'm',
+												hasSubmitted: false,
+												intake: 0,
+												protein: 0,
+												carbs: 0,
+												fats: 0,
+												texts: translations[getLang()]
+											},
+											methods: {
+												onSubmitForm: function(event){
+													event.preventDefault()
+													
+													age = Number(this.age)
+													height = this.useLbs? 30.68 * Number(this.height_ft) + 2.54 * Number(this.height_in) : Number(this.height_cm)
+													weight = Number(this.weight)
+													activity = Number(this.activity)
+													
+													var gender_cals = this.gender == "m" ? 5 : -161;
+													var objective_cals = this.gender == "m" ? men[this.objective]: women[this.objective];
+							
+													var calories = 10 * weight + 6.25 * height - 5 * age + gender_cals
+													var tdee = calories * activity
+													var intake = tdee + objective_cals
+													var protein = (protein_ratios[this.objective] * intake) / 4;
+													var carbs = (carb_ratios[this.objective] * intake) / 4;
+													var fats = (fat_ratios[this.objective] * intake) / 9;
+							
+													calories = Math.round(calories)
+													tdee = Math.round(tdee)
+													this.intake = Math.round(intake)
+													this.protein = Math.round(protein)
+													this.carbs = Math.round(carbs)
+													this.fats = Math.round(fats)
+													this.hasSubmitted = true
+												}
+											}
+										});
+									</script>
+								</div> 
+							</div>
+							<div class="col-4 col-12-medium">
+								<div id="sidebar">
+
+									<!-- Sidebar -->
+										<section>
+											<h3>Cook Book</h3>
+											<p>Here is the cookbook to help you in the kitchen to achieve your fitness goals</p>
+											<footer>
+												<p>Click on the image to download the cookbook:<p>
+													<a href="assets/PDF/Meal Plan.pdf" download="Meal Plan">
+													  <img src="images/shrimp-stir-fry-horizontal-1545495841.png" alt="Meal Plan" width="180" height="130ß">
+													</a>
+											</footer>
+										</section>
+
+										
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			
+							<div class="col-3 col-6-medium col-12-small">
+
+								<!-- Contact -->
+								<section class="widget contact last">
+									<h3>Contact Us</h3>
+									<ul>
+										
+										<li><a href="https://instagram.com/s.w.e.a.tfitness?igshid=152cx1j0r2vw3" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										
+									</ul>
+									<p>Founded in 2020<br />
+									Birmingham<br />
+									info@sweatfit.co.uk</p>
+								</section>
+
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-12">
+								<div id="copyright">
+									<ul class="menu">
+										<li>&copy; All rights reserved</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</footer>
+				</div>
+
+			</div>
+
+		<!-- Scripts -->
+
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
